@@ -1,4 +1,4 @@
-## TBD
+## 1.0.8
 * Remove erroneous empty-arg call to `build.sh` in Circle config file
 
 ## 1.0.7
