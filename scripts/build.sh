@@ -1,5 +1,6 @@
 set -euo pipefail
 script_dirpath="$(cd "$(dirname "${0}")" && pwd)"
+root_dirpath="$(dirname "${script_dirpath}")"
 
 IMAGE_NAME="kurtosistech/iproute2"
 
@@ -43,7 +44,11 @@ esac
 #                                           Main Code
 # ========================================================================================================
 if "${do_build}"; then
-    docker build -t "${IMAGE_NAME}" -f "${script_dirpath}/Dockerfile" "${script_dirpath}"
+    if ! [ -f "${root_dirpath}"/.dockerignore ]; then
+        echo "Error: No .dockerignore file found in root; this is required so Docker caching works properly" >&2
+        exit 1
+    fi
+    docker build -t "${IMAGE_NAME}" -f "${root_dirpath}/Dockerfile" "${root_dirpath}"
 fi
 
 if "${do_publish}"; then

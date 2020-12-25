@@ -23,7 +23,7 @@ jobs:
       - checkout
       - setup_remote_docker:
           version: "<< pipeline.parameters.docker-engine-version>>"
-      - run: ./build.sh build
+      - run: scripts/build.sh build
 
   push_docker_image:
     docker:
@@ -36,7 +36,7 @@ jobs:
       - setup_remote_docker:
           version: "<< pipeline.parameters.docker-engine-version>>"
       - run: docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
-      - run: ./build.sh publish
+      - run: scripts/build.sh publish
 
 workflows:
   main:
