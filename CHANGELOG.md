@@ -1,3 +1,6 @@
+## 1.0.4
+* Drop `setup_remote_docker` command from CircleCI config because the base image is supposed to have it
+
 ## 1.0.3
 * Try to correct invalid Circle schema
 

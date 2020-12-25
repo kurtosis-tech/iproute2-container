@@ -1,5 +1,6 @@
 version: 2.1
 
+# NOTE: According to https://circleci.com/docs/2.0/building-docker-images , the CircleCI base images come with the Docker CLI preinstalled so we don't need to install it
 jobs:
   validate:
     docker:
@@ -9,8 +10,6 @@ jobs:
           password: ${DOCKER_PASSWORD}
     steps:
       - checkout
-      - setup_remote_docker:
-          version: 20.10.0
       - run: ./build.sh
 
   push_docker_image:
@@ -21,8 +20,6 @@ jobs:
           password: ${DOCKER_PASSWORD}
     steps:
       - checkout
-      - setup_remote_docker:
-          version: 20.10.0
       - run: ./build.sh
       - run: ./push-to-dockerhub.sh
 
