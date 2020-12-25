@@ -2,19 +2,27 @@ version: 2.1
 
 jobs:
   validate:
+    docker:
+      - image: cimg/base:2020.01
+        auth:
+          username: ${DOCKER_USERNAME}
+          password: ${DOCKER_PASSWORD}
     steps:
       - checkout
       - setup_remote_docker:
           version: 20.10.0
-      - run: "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
       - run: ./build.sh
 
   push_docker_image:
+    docker:
+      - image: cimg/base:2020.01
+        auth:
+          username: ${DOCKER_USERNAME}
+          password: ${DOCKER_PASSWORD}
     steps:
       - checkout
       - setup_remote_docker:
           version: 20.10.0
-      - run: "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
       - run: ./build.sh
       - run: ./push-to-dockerhub.sh
 
