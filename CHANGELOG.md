@@ -1,3 +1,6 @@
+## TBD
+* Add back `docker login`, which is needed for pushing to Dockerhub
+
 ## 1.0.5
 * `cimg/base` -> version `2020.12`
 * Add back `setup_remote_docker` because it's how the Docker Engine gets set up
