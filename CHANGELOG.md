@@ -1,4 +1,4 @@
-## TBD
+## 1.0.7
 * Consolidate `build.sh` and `push-to-dockerhub.sh` into a single script
 
 ## 1.0.6
