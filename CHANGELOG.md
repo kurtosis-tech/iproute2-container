@@ -1,3 +1,6 @@
+## 1.0.3
+* Try to correct invalid Circle schema
+
 ## 1.0.2
 * Add CircleCI
 
