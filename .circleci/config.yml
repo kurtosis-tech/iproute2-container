@@ -35,7 +35,6 @@ jobs:
       - checkout
       - setup_remote_docker:
           version: "<< pipeline.parameters.docker-engine-version>>"
-      - run: ./build.sh
       - run: docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
       - run: ./build.sh publish
 

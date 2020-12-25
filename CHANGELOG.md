@@ -1,3 +1,6 @@
+## 1.0.8
+* Remove erroneous empty-arg call to `build.sh` in Circle config file
+
 ## 1.0.7
 * Consolidate `build.sh` and `push-to-dockerhub.sh` into a single script
 
