@@ -1,4 +1,4 @@
-## TBD
+## 1.0.6
 * Add back `docker login`, which is needed for pushing to Dockerhub
 
 ## 1.0.5
