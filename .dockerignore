@@ -1,0 +1,13 @@
+.circleci
+.git
+.github
+.gitignore
+.idea
+.vscode
+
+*.md
+docs
+
+scripts
+
+Dockerfile

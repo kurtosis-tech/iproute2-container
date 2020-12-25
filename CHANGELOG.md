@@ -1,3 +1,7 @@
+## TBD
+* Add `.dockerignore`
+* Move `build.sh` to `scripts` directory, for consistency across our repos
+
 ## 1.0.8
 * Remove erroneous empty-arg call to `build.sh` in Circle config file
 
