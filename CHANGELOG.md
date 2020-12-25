@@ -1,4 +1,4 @@
-## TBD
+## 1.0.9
 * Add `.dockerignore`
 * Move `build.sh` to `scripts` directory, for consistency across our repos
 
