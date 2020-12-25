@@ -1,4 +1,4 @@
-## TBD
+## 1.0.2
 * Add CircleCI
 
 ## 1.0.1
