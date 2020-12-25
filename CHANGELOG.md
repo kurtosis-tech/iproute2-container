@@ -1,3 +1,7 @@
+## TBD
+* `cimg/base` -> version `2020.12`
+* Add back `setup_remote_docker` because it's how the Docker Engine gets set up
+
 ## 1.0.4
 * Drop `setup_remote_docker` command from CircleCI config because the base image is supposed to have it
 
