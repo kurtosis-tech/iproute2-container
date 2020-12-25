@@ -1,3 +1,6 @@
+## TBD
+* Consolidate `build.sh` and `push-to-dockerhub.sh` into a single script
+
 ## 1.0.6
 * Add back `docker login`, which is needed for pushing to Dockerhub
 
