@@ -47,6 +47,8 @@ workflows:
               ignore:
                 - develop
                 - master
+          context:
+            - github_user
       - push_docker_image:
           context:
             - docker-user
