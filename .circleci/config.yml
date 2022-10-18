@@ -48,7 +48,7 @@ workflows:
                 - develop
                 - master
           context:
-            - github_user
+            - docker-user
       - push_docker_image:
           context:
             - docker-user
