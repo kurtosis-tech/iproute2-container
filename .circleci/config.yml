@@ -8,7 +8,7 @@ parameters:
   # To upgrade the CircleCI base image, see https://hub.docker.com/r/cimg/base/tags?page=1&ordering=last_updated
   circleci-base-image:
     type: string
-    default: cimg/base:2020.12
+    default: cimg/base:2022.06
 
 # NOTE: According to https://circleci.com/docs/2.0/building-docker-images , the CircleCI base images come with the Docker CLI preinstalled so we don't need to install it
 # We do still need to run `setup_remote_dockder` to get a Docker Engine, however
