@@ -2,9 +2,9 @@ set -euo pipefail
 script_dirpath="$(cd "$(dirname "${0}")" && pwd)"
 root_dirpath="$(dirname "${script_dirpath}")"
 
-IMAGE_NAME="kurtosistech/iproute2"
-DOCKER_CONTEXT="iproute2_docker_context"
-SUPPORTED_PLATFORMS="linux/arm64/v8,linux/amd64"
+IMAGE_NAME='kurtosistech/iproute2'
+DOCKER_CONTEXT='iproute2_docker_context'
+SUPPORTED_PLATFORMS='linux/arm64/v8,linux/amd64'
 
 # ========================================================================================================
 #                                           Arg Parsing
@@ -57,7 +57,7 @@ if "${do_build}"; then
     else
         echo "Info: Publish flag set to false, nothing will be published to DockerHub"
     fi
-    docker context create ${DOCKER_CONTEXT}
-    docker buildx create --use ${DOCKER_CONTEXT}
-    docker buildx build ${push_flag} --platform ${SUPPORTED_PLATFORMS} -t "${IMAGE_NAME}" -f "${root_dirpath}/Dockerfile" "${root_dirpath}"
+    docker context create "${DOCKER_CONTEXT}"
+    docker buildx create --use "${DOCKER_CONTEXT}"
+    docker buildx build ${push_flag} --platform "${SUPPORTED_PLATFORMS}" -t "${IMAGE_NAME}" -f "${root_dirpath}/Dockerfile" "${root_dirpath}"
 fi
