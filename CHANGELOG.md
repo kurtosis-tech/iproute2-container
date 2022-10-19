@@ -1,3 +1,8 @@
+## 1.0.10
+* Upgrade docker version used in CI from 19.03.13 to 20.10.18
+* Upgrade circle base image from 2020.12 to 2022.06
+* Build docker images for both linux/amd64 and linux/arm64/v8 using buildx
+
 ## 1.0.9
 * Add `.dockerignore`
 * Move `build.sh` to `scripts` directory, for consistency across our repos
