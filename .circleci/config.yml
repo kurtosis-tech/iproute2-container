@@ -4,11 +4,11 @@ parameters:
   # To upgrade the Docker Engine version, see which versions are supported at: https://circleci.com/docs/2.0/building-docker-images/#docker-version
   docker-engine-version:
     type: string
-    default: 19.03.13
+    default: 20.10.18
   # To upgrade the CircleCI base image, see https://hub.docker.com/r/cimg/base/tags?page=1&ordering=last_updated
   circleci-base-image:
     type: string
-    default: cimg/base:2020.12
+    default: cimg/base:2022.06
 
 # NOTE: According to https://circleci.com/docs/2.0/building-docker-images , the CircleCI base images come with the Docker CLI preinstalled so we don't need to install it
 # We do still need to run `setup_remote_dockder` to get a Docker Engine, however
