@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  kurtosis-docs-checker: kurtosis-tech/docs-checker@0.2.1
+
 parameters:
   # To upgrade the Docker Engine version, see which versions are supported at: https://circleci.com/docs/2.0/building-docker-images/#docker-version
   docker-engine-version:
@@ -20,6 +23,11 @@ jobs:
           username: ${DOCKER_USERNAME}
           password: ${DOCKER_PASSWORD}
     steps:
+      # Install kudet
+      - run: |
+          echo "deb [trusted=yes] https://apt.fury.io/kurtosis-tech/ /" | sudo tee /etc/apt/sources.list.d/kurtosis.list
+          sudo apt update
+          sudo apt install kudet
       - checkout
       - setup_remote_docker:
           version: "<< pipeline.parameters.docker-engine-version>>"
@@ -32,6 +40,11 @@ jobs:
           username: ${DOCKER_USERNAME}
           password: ${DOCKER_PASSWORD}
     steps:
+      # Install kudet
+      - run: |
+          echo "deb [trusted=yes] https://apt.fury.io/kurtosis-tech/ /" | sudo tee /etc/apt/sources.list.d/kurtosis.list
+          sudo apt update
+          sudo apt install kudet
       - checkout
       - setup_remote_docker:
           version: "<< pipeline.parameters.docker-engine-version>>"
@@ -41,6 +54,11 @@ jobs:
 workflows:
   main:
     jobs:
+      - kurtosis-docs-checker/check-docs:
+          filters:
+            branches:
+              ignore:
+                - master
       - validate:
           filters:
             branches:
