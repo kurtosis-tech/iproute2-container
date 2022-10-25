@@ -1,5 +1,7 @@
 # TBD
 
+# 1.0.11
+
 ### Changes
 * Setup Kurtosis official release workflow
 
