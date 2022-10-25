@@ -50,6 +50,7 @@ if ! docker_tag="$(kudet get-docker-tag)"; then
     exit 1
 fi
 image_name="${IMAGE_ORG_AND_REPO}:${docker_tag}"
+image_name_no_version="${IMAGE_ORG_AND_REPO}:latest"
 
 if "${do_build}"; then
     if ! [ -f "${root_dirpath}"/.dockerignore ]; then
@@ -65,5 +66,5 @@ if "${do_build}"; then
     fi
     docker context create "${DOCKER_CONTEXT}"
     docker buildx create --use "${DOCKER_CONTEXT}"
-    docker buildx build ${push_flag} --platform "${SUPPORTED_PLATFORMS}" -t "${image_name}" -f "${root_dirpath}/Dockerfile" "${root_dirpath}"
+    docker buildx build ${push_flag} --platform "${SUPPORTED_PLATFORMS}" -t "${image_name}" -t "${image_name_no_version}" -f "${root_dirpath}/Dockerfile" "${root_dirpath}"
 fi
