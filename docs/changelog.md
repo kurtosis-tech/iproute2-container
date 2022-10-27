@@ -1,5 +1,8 @@
 # TBD
 
+### Features
+* Add `latest` as default docker tag such that the latest is always accessible by pulling `kurtosisteck/iproute2:latest`
+
 # 1.0.11
 
 ### Changes
