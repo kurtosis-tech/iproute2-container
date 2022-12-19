@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  kurtosis-docs-checker: kurtosis-tech/docs-checker@0.2.1
+  kurtosis-docs-checker: kurtosis-tech/docs-checker@0.2.3
 
 parameters:
   # To upgrade the Docker Engine version, see which versions are supported at: https://circleci.com/docs/2.0/building-docker-images/#docker-version
@@ -55,6 +55,7 @@ workflows:
   main:
     jobs:
       - kurtosis-docs-checker/check-docs:
+          should-check-changelog: false
           filters:
             branches:
               ignore:
