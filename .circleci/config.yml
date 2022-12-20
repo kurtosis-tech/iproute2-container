@@ -56,6 +56,14 @@ workflows:
     jobs:
       - kurtosis-docs-checker/check-docs:
           should-check-changelog: false
+          markdown-link-check-config-json: |
+            {
+                "ignorePatterns": [
+                    {
+                        "pattern": "https://github.com/kurtosis-tech/iproute2-container"
+                    }
+                ]
+            }          
           filters:
             branches:
               ignore:
